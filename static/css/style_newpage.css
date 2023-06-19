@@ -1,0 +1,150 @@
+.strech{
+
+    /* background-color:aqua;*/
+     background-image: url('bg_beach.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center center;
+     width:auto;
+     padding:0;
+     margin-top:0px;
+     margin-left:0px;
+ }
+
+
+ .map_img{
+    display:inline-block;
+    width:900px;
+    height: 600px;
+    border-color:red;
+    border-radius: 30px;
+    border: 2px solid black;
+    margin-left: 20px;
+    margin-top:20px;
+
+}
+
+.map_img img
+{
+    border-radius: 30px;
+}
+
+
+.but
+{
+    color:red;
+    background-color:black;
+    
+    
+}
+
+.but h1{
+
+    margin-left:600px;
+    text-indent:12px;
+
+}
+
+
+.buut{
+    position:absolute;
+    display:inline-block;
+    width:500px;
+    height:600px;
+    margin-left: 40px;
+    margin-top:20px;
+    justify-content: center;
+   
+   
+    background-color: transparent;
+    border-radius: 30px;
+    border:2px solid black;
+    
+}
+
+.buut input{
+    color:red;
+    background-color: transparent;
+    -webkit-text-stroke-color: white;
+    border-radius: 20px;
+    border:2px solid black;
+    margin-left: 20px;
+    margin-top: 20px; 
+    font-size:13px;  
+    padding:8px 18px;
+}
+
+.buut h2{
+    
+  margin-left:150px;
+  margin-top:50px;
+  
+}
+
+
+.source-list label{
+    margin-top:50px;
+    margin-left:200px;
+    display:flex;
+    font-weight: 400;
+
+}
+
+.source-list select{
+    position:relative;
+    margin-left:140px;
+    margin-top:15px;
+    border:2px solid black;
+    border-radius: 30px;
+    padding:2px;
+    
+}
+
+
+.destination-list select{
+    position:absolute;
+    margin-left:140px;
+    margin-top:20px;
+    border:2px solid black;
+    border-radius: 35px;
+    padding:2px;
+}
+
+
+
+.destination-list label{
+    margin-left:200px;
+    display:flex;
+    margin-top:50px;
+    font-weight:400;
+}
+
+
+.buttons{
+   
+    
+    margin-top:120px;
+    margin-left:100px;
+    display: flex;
+    justify-content: space-between;
+    width:50%;
+}
+
+.button{
+    font-size:13px;
+    width:100px;
+    
+}
+
+.back{
+    
+    margin-left: 200px;
+}
+
+
+.output{
+    margin-left: 60px;
+    margin-top: 150px;
+}
+
+

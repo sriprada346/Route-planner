@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style_newpage.css')}}">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+  <div class="strech">
+    <div class="but">
+      <h1>ROUTE PLANER</h1>
+    </div>
+
+    <div class="map_img">
+      <form>
+      <img src="{{url_for('static',filename='images/image.jpeg')}}" width="900px" height="600px">
+      </form>
+    </div>
+
+    <div class="buut">
+        <form action="/submit" method="post">
+          <div class="source-list">
+            <br><br><br><br>
+            <label for="list1">FROM</label>
+            <select id ="drop_source" name="drop_source" required>
+              <option value=""></option>    
+              <option id="s_bank" value="bank" name="bank"> BANK</option>
+              <option id="s_canteen" value="canteen" name="canteen">CANTEEN</option>
+              <option id="s_cvraman" value="cvraman" name="cvraman"> CV RAMAN</option>
+              <option id="s_ramanujan" value="ramanujan" name="ramanujan"> RAMANUJAN</option>
+              <option id="s_sanmathi" value="sanmathi" name="sanmathi"> SANMATHI</option>
+              <option id="s_busstand" value="busstand" name="busstand"> BUS STAND</option>
+              <option id="s_sadananda" value="sadananda" name="sadananda"> SADNANDA</option>
+              <option id="s_temple" value="temple" name="temple"> TEMPLE</option>
+              <option id="s_bcalva" value="bcalva" name="bcalva"> BC ALVA STADIUM</option>
+              <option id="s_maingate" value="maingate" name="maingate"> MAIN GATE</option>
+              <option id="s_apj" value="apj" name="apj"> APJ  BLOCK</option>
+              <option id="s_atal" value="atal" name="atal"> ATAL BLOCK</option>
+              <option id="s_cops" value="cops" name="cops"> COPS</option>
+              <option id="s_vishweshwarayya" value="vishweshwarayya" name="vishweshwarayya"> VISHWESHWARAYYA BLOCK</option>
+              <option id="s_mech" value="mech" name="mech"> MECHANIC BLOCK</option>
+              <option id="s_polytechnic" value = "polytechnic" name="polytechnic">POLYTECHNIC BLOCK</option>
+  
+              </select>
+          </div>
+
+            
+          <div class="destination-list">
+            <label for="list2">TO</label>
+            
+              <select id ="drop_destination" name="drop_destination" required>
+                <option value=""> </option>    
+                <option id="d_bank" value="bank" name="bank"> BANK</option>
+                <option id="d_canteen" value="canteen" name="canteen">CANTEEN</option>
+                <option id="d_cvraman" value="cvraman" name="cvraman"> CV RAMAN</option>
+                <option id="d_ramanujan" value="ramanujan" name="ramanujan"> RAMANUJAN</option>
+                <option id="d_sanmathi" value="sanmathi" name="sanmathi"> SANMATHI</option>
+                <option id="d_busstand" value="busstand" name="busstand"> BUS STAND</option>
+                <option id="d_sadananda" value="sadananda" name="sadananda"> SADNANDA</option>
+                <option id="d_temple" value="temple" name="temple"> TEMPLE</option>
+                <option id="d_bcalva" value="bcalva" name="bcalva"> BC ALVA STADIUM</option>
+                <option id="d_maingate" value="maingate" name="maingate"> MAIN GATE</option>
+                <option id="d_apj" value="apj" name="apj"> APJ  BLOCK</option>
+                <option id="d_atal" value="atal" name="atal"> ATAL BLOCK</option>
+                <option id="d_cops" value="cops" name="cops"> COPS</option>
+                <option id="d_vishweshwarayya" value="vishweshwarayya"> VISHWESHWARAYYA BLOCK</option>
+                <option id="d_mech" value="mech" name="mech"> MECHANIC BLOCK</option>
+                <option id="d_polytechnic" value = "polytechnic">POLYTECHNIC BLOCK</option>
+                </select>
+            </div>  
+      
+            
+            <div class="buttons">
+              <div class="button" >  
+                <input type="submit" value="SUBMIT" action="/submit" ></button>
+              </div>  
+        </form> 
+              <div class="button">
+                <form  action="/" methd="POST">
+                  <input type="submit" value="BACK" action="/"></button>
+                </form>
+              </div>
+              <div class="buttton">
+                <form action="/mainpage" method=""POST>  
+                  <input type="submit" value="CLEAR" action="/mainpage" ></button>
+                </form>  
+              </div> 
+            </div>
+
+          <br><br>
+          <!--<textarea id="output" name="output" rows="10" cols="50">{{ result }}</textarea>-->
+    </div>
+    </div>
+  </body>
+</html>

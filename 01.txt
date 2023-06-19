@@ -1,0 +1,119 @@
+
+import heapq
+import sys
+
+
+source_node_names = ["bank", "canteen", "cvraman", "ramanujan", "sanmathi", "busstand"]
+#"sadananda"] 
+# "temple", "bcalva", "maingate", "apj", "atal", "cops", "vishweshwarayya", "mech", "polytechnic"]
+source_node_numbers = {source_node_names[i]: i for i in range(1,6)} # Create a dictionary that maps node names to numbers
+print(source_node_numbers)
+
+class Node:
+    def __init__(self, name):
+        self.name = name
+        self.neighbors = {}
+        
+    def add_neighbor(self, neighbor, weight):
+        self.neighbors[neighbor] = weight
+
+
+    
+
+class Graph:
+    def __init__(self):
+        self.nodes = set()
+
+    def add_node(self, node):
+        self.nodes.add(node)
+
+    def find_node(self, name):
+        for node in self.nodes:
+            if node.name == name:
+                return node
+        return None 
+    
+
+       
+
+#source
+graph=Graph()
+for node in graph.nodes:
+    node.distance = float('inf')
+    node.visited = False
+    node.previous = None
+n1 = Node('bank')
+n2 = Node('canteen')
+n3 = Node('cvraman')
+n4 = Node('ramanujan')
+n5 = Node('sanamathi')
+
+graph.add_node(n1)
+graph.add_node(n2)
+graph.add_node(n3)
+graph.add_node(n4)
+graph.add_node(n5)
+
+n1.add_neighbor(n2, 2)
+n1.add_neighbor(n3, 1)
+n2.add_neighbor(n1, 2)
+n2.add_neighbor(n3, 3)
+n2.add_neighbor(n4, 5)
+n3.add_neighbor(n1, 1)
+n3.add_neighbor(n2, 3)
+n3.add_neighbor(n4, 2)
+n4.add_neighbor(n2, 5)
+n4.add_neighbor(n3, 2)
+n4.add_neighbor(n5, 1)
+n5.add_neighbor(n4, 1)
+
+
+# Use Dijkstra's algorithm to find the shortest path
+def dijkstra(graph, start, end):
+    start_node = Node(start)
+    start_node = graph.find_node(start)
+    print(type(start_node))
+    end_node = graph.find_node(end)
+    #distance = {node: float('inf') for node in graph}
+    start_node.distance = 0
+    unvisited = [(node.distance, node) for node in graph.nodes]
+    heapq.heapify(unvisited)
+
+    while unvisited:
+        current_distance, current_node = heapq.heappop(unvisited)
+        if current_node == end_node:
+            path = []
+            while current_node is not None:
+                path.append(current_node.name)
+                current_node = current_node.previous
+            return path[::-1]
+
+        current_node.visited = True
+
+        for neighbor, weight in current_node.neighbors.items():
+            if not neighbor.visited:
+                new_distance = current_node.distance + weight
+                if new_distance < neighbor.distance:
+                    neighbor.distance = new_distance
+                    neighbor.previous = current_node
+                    for i in range(len(unvisited)):
+                        if unvisited[i][1] == neighbor:
+                            unvisited[i] = (new_distance, neighbor)
+                            break
+                    heapq.heapify(unvisited)
+    return None
+
+def my_function(graphs,source,destination):
+        print(source)
+        print(destination)
+        
+        source_number=source_node_numbers[source]
+        print(source_number)
+        destination_number=source_node_numbers[destination]
+        source_number_str=str(source_number)
+        print(type(source_number_str))
+        path = dijkstra(graph,source_number,destination_number)
+       # result = source_number+destination_number
+        print("this is the path result",path)
+        #return path
+    
